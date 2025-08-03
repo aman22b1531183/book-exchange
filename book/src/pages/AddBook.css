@@ -1,0 +1,218 @@
+/* frontend/src/pages/AddBook.css */
+
+/* Overall page container for the fixed background and centered form */
+.add-book-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center form vertically and horizontally */
+    min-height: 100vh; /* Ensures it takes full viewport height */
+    width: 100%; /* Ensures it takes full viewport width */
+    padding: 20px; /* Padding around the content */
+    box-sizing: border-box; /* Include padding in dimensions */
+    position: relative; /* Needed for the pseudo-element overlay */
+    overflow: auto; /* Allow the container itself to scroll if content is taller than viewport */
+
+    /* Background image styles for the entire page */
+    background-image: url('../assests/add_book.jpg'); /* <--- KEEP YOUR IMAGE URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* No z-index: -1 here, let ::before handle the layering */
+}
+
+/* Pseudo-element for a subtle dark overlay for the entire page background */
+.add-book-page-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker overlay for background */
+    z-index: 1; /* Below the form, but above the background image */
+}
+
+
+/* Form wrapper for transparency and scrolling */
+.add-book-form-wrapper {
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white background for the form box */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: white; /* Default text color for elements over image */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Text shadow for readability */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    padding: 40px 30px; /* Padding inside the form box */
+    width: 100%;
+    max-width: 500px; /* Max width for the form wrapper */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    
+    /* <--- CRITICAL FIX FOR SCROLLING --- */
+    max-height: calc(100vh - 120px - 40px - 40px); /* Adjust max height: 100vh - header - footer - page_padding_top - page_padding_bottom */
+    overflow-y: auto; /* <--- Enable vertical scrolling for the form wrapper */
+    z-index: 2; /* Make sure form wrapper is above the background overlay */
+
+    /* Remove margin:auto here as justify-content/align-items handles centering */
+}
+
+/* Pseudo-element for a subtle dark overlay specific to the form wrapper */
+.add-book-form-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly darker overlay */
+    border-radius: 10px;
+    z-index: 1; /* Below content of form */
+}
+
+/* Ensure content is above the overlay */
+.add-book-form-wrapper > div,
+.add-book-form-wrapper > form {
+    position: relative;
+    z-index: 2;
+    color: white;
+    width: 100%; /* Ensure content takes full width inside wrapper */
+}
+
+/* Header content for Add Book page */
+.add-book-header-content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.add-book-icon {
+    font-size: 3.5em;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+    text-shadow: none;
+}
+
+.add-book-welcome-heading {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.add-book-description {
+    font-size: 1em;
+    color: #e0e0e0;
+    line-height: 1.5;
+    max-width: 400px;
+}
+
+/* Reusing and overriding form styles for Add Book */
+.add-book-form {
+    width: 100%;
+    max-width: 400px; /* Ensure form elements fit within this */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-book-form .form-group label {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.add-book-form .form-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: white !important;
+}
+
+.add-book-form .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.add-book-form .form-input:focus {
+    border-color: white !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4) !important;
+}
+
+.add-book-form .form-select {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: white !important;
+}
+
+.add-book-form .form-select option {
+    background-color: #333;
+    color: white;
+}
+
+.add-book-form .form-textarea {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: white !important;
+}
+
+.add-book-form .form-submit-button {
+    background-color: rgba(0, 123, 255, 0.7) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.add-book-form .form-submit-button:hover:not(:disabled) {
+    background-color: rgba(0, 123, 255, 0.9) !important;
+}
+
+/* Specific styling for the file input */
+.add-book-form .form-file-input {
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+    cursor: pointer;
+    line-height: normal;
+}
+
+.add-book-form .form-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+.add-book-form .form-file-input::before {
+  content: 'Choose File';
+  display: inline-block;
+  background: rgba(0, 123, 255, 0.5);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 8px 12px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+}
+.add-book-form .form-file-input:hover::before {
+  background-color: rgba(0, 123, 255, 0.7);
+}
+.add-book-form .form-file-input:active::before {
+  background-color: rgba(0, 123, 255, 0.9);
+}
+
+
+/* Responsive adjustments for Add Book page */
+@media (max-width: 600px) {
+    .add-book-form-wrapper {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+    .add-book-welcome-heading {
+        font-size: 1.8em;
+    }
+    .add-book-icon {
+        font-size: 3em;
+    }
+}

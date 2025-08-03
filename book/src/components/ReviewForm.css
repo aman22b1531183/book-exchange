@@ -1,0 +1,116 @@
+/* frontend/src/components/ReviewForm.css */
+
+.review-form-container {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.review-form-container .form-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.rating-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rating-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.stars {
+    font-size: 2em;
+    color: #ccc; /* Default color of empty stars */
+    cursor: pointer;
+}
+
+.stars .star {
+    margin: 0 2px;
+    transition: color 0.2s ease;
+}
+
+.stars .star.filled {
+    color: #ffc107; /* Gold color for filled stars */
+}
+
+/* Ensure form-input and form-textarea from Form.css are applied */
+.review-form-container .form-input,
+.review-form-container .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Ensure form-button from Form.css is applied */
+.review-form-container .form-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.review-form-container .form-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.review-form-container .form-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Additional styling for ExchangeDetailsPage if needed for review section */
+.review-section {
+    background-color: #e6f7ff; /* Light blue background for review section */
+    border: 1px solid #91d5ff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.review-section h2 {
+    color: #218838; /* Green heading for review section */
+    margin-bottom: 15px;
+}
+
+.review-section .reviewed-message {
+    color: #28a745; /* Green text for "already reviewed" */
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.review-section .btn {
+    /* Base styles for buttons if not already in App.css or similar */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.review-section .btn-info {
+    background-color: #17a2b8; /* Bootstrap-like info blue */
+    color: white;
+}
+.review-section .btn-info:hover {
+    background-color: #138496;
+}

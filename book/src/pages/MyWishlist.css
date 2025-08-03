@@ -1,0 +1,26 @@
+/* frontend/src/pages/MyWishlist.css */
+
+.my-wishlist-page-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjust column size as needed */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.status-message.no-wishlist {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    padding: 30px;
+}
+
+/* Ensure general .page-heading and .status-message from App.css are applied */

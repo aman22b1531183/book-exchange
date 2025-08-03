@@ -1,0 +1,9 @@
+/* frontend/src/components/Footer.css */
+.footer {
+  background-color: #34495e; /* Match header */
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to bottom */
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* Subtle top shadow */
+}

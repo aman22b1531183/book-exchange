@@ -1,0 +1,156 @@
+/* frontend/src/pages/ExchangeRequests.css */
+
+.exchange-requests-page-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333 !important; /* <--- CRITICAL FIX: Force default text color */
+}
+
+/* Explicitly target the main page heading */
+.exchange-requests-page-container .page-heading {
+    color: #2c3e50 !important; /* <--- CRITICAL FIX: Force dark color for main heading */
+    /* Inherits font-size, font-weight, text-align, margin-bottom from App.css */
+}
+
+.exchange-requests-section {
+    margin-bottom: 30px;
+}
+
+/* Explicitly target section headings */
+.exchange-requests-section .section-heading {
+    text-align: center;
+    color: #2c3e50 !important; /* <--- CRITICAL FIX: Force dark color for section headings */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.exchange-request-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.exchange-request-card:hover {
+    transform: translateY(-3px);
+}
+
+.exchange-request-card p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #333; /* Ensure paragraph text is dark */
+}
+
+.exchange-request-card p strong {
+    color: #0056b3;
+}
+
+.exchange-request-card .font-semibold {
+    font-weight: 600;
+}
+
+.exchange-request-card .font-medium {
+    font-weight: 500;
+}
+
+.request-meta-text {
+    font-size: 0.85em;
+    color: #666; /* Ensure meta text is dark */
+    margin-top: 10px;
+}
+
+/* Status text colors */
+.request-status-text {
+    font-weight: bold;
+}
+.status-pending { color: #ffc107; } /* Orange */
+.status-accepted { color: #28a745; } /* Green */
+.status-declined { color: #dc3545; } /* Red */
+.status-cancelled { color: #6c757d; } /* Grey */
+.status-completed { color: #007bff; } /* Blue */
+
+
+.request-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.action-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    flex-grow: 1;
+    min-width: 120px;
+}
+
+.view-details-button {
+    background-color: #6c757d;
+    color: white;
+}
+.view-details-button:hover {
+    background-color: #5a6268;
+}
+
+.accept-button {
+    background-color: #28a745;
+    color: white;
+}
+.accept-button:hover {
+    background-color: #218838;
+}
+
+.decline-button {
+    background-color: #dc3545;
+    color: white;
+}
+.decline-button:hover {
+    background-color: #c82333;
+}
+
+.cancel-button {
+    background-color: #ffc107;
+    color: #333; /* Ensure text is dark on yellow */
+}
+.cancel-button:hover {
+    background-color: #e0a800;
+}
+
+.complete-button {
+    background-color: #007bff;
+    color: white;
+}
+.complete-button:hover {
+    background-color: #0056b3;
+}
+
+.status-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    color: #555 !important; /* <--- Force status messages to be dark */
+}
+
+.status-message.info-message {
+    color: #777 !important; /* <--- Force info messages to be dark */
+    font-style: italic;
+}
+
+.status-message.error-message {
+    color: #dc3545 !important; /* <--- Force error messages to be red */
+}

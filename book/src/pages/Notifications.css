@@ -1,0 +1,133 @@
+/* frontend/src/pages/Notifications.css */
+
+.notifications-page-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-actions {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.mark-all-read-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.mark-all-read-btn:hover {
+    background-color: #0056b3;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.notification-item.unread {
+    background-color: #e6f7ff; /* Light blue for unread */
+    border-color: #91d5ff;
+}
+
+.notification-item.read {
+    background-color: #f9f9f9; /* Lighter grey for read */
+}
+
+.notification-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.notification-sender-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+}
+
+.notification-message {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.4;
+}
+
+.notification-message .notification-date {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 5px;
+}
+
+.notification-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.mark-read-btn,
+.view-details-link {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mark-read-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+.mark-read-btn:hover {
+    background-color: #218838;
+}
+
+.view-details-link {
+    background-color: #6c757d; /* Grey */
+    color: white;
+}
+
+.view-details-link:hover {
+    background-color: #5a6268;
+}
+
+.status-message.no-notifications {
+    text-align: center;
+    color: #777;
+    padding: 30px;
+    font-style: italic;
+}

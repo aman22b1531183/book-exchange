@@ -1,0 +1,78 @@
+/* frontend/src/components/WishlistItem.css */
+
+.wishlist-item-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* For positioning remove button if desired */
+}
+
+.wishlist-item-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+}
+
+.wishlist-book-cover {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.wishlist-item-details {
+    flex-grow: 1;
+}
+
+.wishlist-item-title {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.wishlist-item-author {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.wishlist-item-notes,
+.wishlist-item-owner,
+.wishlist-item-status {
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 3px;
+}
+
+.wishlist-item-actions {
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Reusing general btn-danger from existing CSS, but adding sm for small */
+.btn.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+/* Make sure .btn-danger is defined in App.css or similar */
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}

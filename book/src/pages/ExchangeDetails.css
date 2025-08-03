@@ -1,0 +1,378 @@
+/* frontend/src/pages/ExchangeDetails.css */
+
+/* General Page Layout & Section Styling (Keep as is, or adjust for overall page) */
+.exchange-details-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #333 !important; /* <--- NEW: Default text color for the container */
+}
+
+/* Explicitly target the main page heading for visibility */
+.exchange-details-container .page-heading {
+    text-align: center;
+    color: #2c3e50 !important; /* <--- CRITICAL FIX: Force dark color for main heading */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    /* text-shadow: none; Optional: remove text-shadow if it makes it blurry on light background */
+}
+
+
+.exchange-info-card {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.exchange-info-card p {
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #333; /* Ensure paragraph text is dark */
+}
+.exchange-info-card p:last-child {
+    margin-bottom: 0;
+}
+.exchange-info-card strong {
+    font-weight: bold;
+    color: #0056b3;
+}
+.exchange-info-card .highlight {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.exchange-status {
+    font-weight: bold;
+}
+.status-pending { color: orange; }
+.status-accepted { color: green; }
+.status-declined { color: red; }
+.status-cancelled { color: #6c757d; }
+.status-completed { color: #007bff; }
+
+.meta-info {
+    font-size: 0.9em;
+    color: #666; /* Ensure meta text is dark */
+    margin-top: 10px;
+}
+
+/* Actions Section */
+.exchange-actions-bar {
+    margin-bottom: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn { /* General button styles */
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.btn-primary { background-color: #007bff; color: white; }
+.btn-primary:hover { background-color: #0056b3; }
+.btn-success { background-color: #28a745; color: white; }
+.btn-success:hover { background-color: #218838; }
+.btn-danger { background-color: #dc3545; color: white; }
+.btn-danger:hover { background-color: #c82333; }
+.btn-warning { background-color: #ffc107; color: #333; }
+.btn-warning:hover { background-color: #e0a800; }
+.btn-info { background-color: #17a2b8; color: white; }
+.btn-info:hover { background-color: #138496; }
+
+/* Review Section */
+.review-section {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.review-section h2 {
+    color: #218838;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.reviewed-message {
+    color: #28a745;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+/* Messaging Section */
+.messaging-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.messaging-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Ensure messaging section heading is dark */
+}
+
+/* Chat Container - WhatsApp Style */
+.message-list {
+    height: 400px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #e5ddd5 0%, #e5ddd5 100%);
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0,0,0,0.05) 0%, transparent 50%);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Scrollbar Styling */
+.message-list::-webkit-scrollbar {
+    width: 6px;
+}
+.message-list::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+.message-list::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+.message-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+/* Message Wrapper for Better Alignment */
+.message-wrapper {
+    display: flex;
+    margin-bottom: 2px;
+    align-items: flex-end;
+}
+
+.message-wrapper.sent {
+    justify-content: flex-end;
+}
+
+.message-wrapper.received {
+    justify-content: flex-start;
+}
+
+/* Individual Message Bubble */
+.message-item {
+    position: relative;
+    padding: 8px 12px 20px 12px;
+    border-radius: 8px;
+    max-width: 75%;
+    min-width: 100px;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.message-item.sent {
+    background-color: #dcf8c6;
+    border-bottom-right-radius: 2px;
+    margin-left: auto;
+}
+
+.message-item.received {
+    background-color: #ffffff;
+    border-bottom-left-radius: 2px;
+    margin-right: auto;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Message Tails (WhatsApp-style pointed corners) */
+.message-item.sent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid #dcf8c6;
+    border-bottom: 8px solid transparent;
+}
+
+.message-item.received::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-right: 8px solid #ffffff;
+    border-bottom: 8px solid transparent;
+}
+
+/* Message Content */
+.message-sender {
+    font-weight: 600;
+    font-size: 0.78em;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.message-item.sent .message-sender {
+    color: #1565c0;
+}
+
+.message-item.received .message-sender {
+    color: #2e7d32;
+}
+
+.message-content {
+    font-size: 0.9em;
+    color: #303030;
+    line-height: 1.3;
+    margin: 0;
+    margin-bottom: 15px;
+    padding-right: 55px;
+    word-break: break-word;
+}
+
+/* Timestamp Positioning */
+.message-timestamp {
+    position: absolute;
+    bottom: 3px;
+    right: 6px;
+    font-size: 0.6em;
+    color: rgba(0,0,0,0.45);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.message-item.received .message-timestamp {
+    color: rgba(0,0,0,0.45);
+}
+
+/* Message Input Container */
+.message-form {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    padding: 12px 16px;
+    background-color: #f0f2f5;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+}
+
+/* Message Input Field */
+.message-input {
+    flex-grow: 1;
+    min-height: 18px;
+    max-height: 100px;
+    padding: 9px 12px;
+    border: none;
+    border-radius: 18px;
+    font-size: 0.9em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    resize: none;
+    overflow-y: auto;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    outline: none;
+    line-height: 1.4;
+}
+
+.message-input::placeholder {
+    color: #8696a0;
+}
+
+.message-input:focus {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 0 0 2px rgba(37, 211, 102, 0.2);
+}
+
+/* Send Button - Hide any text content */
+.btn-send {
+    background-color: #25d366;
+    color: white;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.btn-send:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.btn-send:active {
+    transform: scale(0.95);
+}
+
+/* Send Icon (you can replace with an actual icon) */
+.btn-send::before {
+    content: '▶';
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    text-indent: 0;
+    margin-left: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message-item {
+        max-width: 85%;
+    }
+    
+    .message-list {
+        height: 350px;
+        padding: 10px;
+    }
+    
+    .message-form {
+        padding: 10px 12px;
+    }
+}
+
+/* Animation for new messages */
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-item.new-message {
+    animation: messageSlideIn 0.3s ease-out;
+}

@@ -1,0 +1,326 @@
+.auth-page-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 20px;
+}
+
+.auth-page-container > div {
+    margin: 0;
+}
+
+.auth-image-section {
+    flex: 0 0 450px;
+    height: 550px;
+    background-image: url('../assests/book-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.auth-form-wrapper {
+    flex: 0 0 400px;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+}
+
+@media (min-width: 850px) {
+    .auth-image-section {
+        flex: 1 1 450px;
+        max-width: 450px;
+    }
+    .auth-form-wrapper {
+        flex: 1 1 400px;
+        max-width: 400px;
+    }
+}
+
+.auth-header-content {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.auth-icon {
+    font-size: 3em;
+    color: #8B4513;
+    margin-bottom: 10px;
+}
+
+.auth-welcome-heading {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+}
+
+.auth-description {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.form-title {
+    font-size: 2em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+    text-align: left;
+}
+
+.form-input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333;
+}
+
+.form-input::placeholder {
+    color: #aaa;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.form-submit-button {
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-submit-button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.form-submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.form-link-text {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+}
+
+.form-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .auth-page-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .auth-image-section,
+    .auth-form-wrapper {
+        border-radius: 10px;
+        margin: 10px 0;
+        width: 90%;
+        max-width: 450px;
+        height: auto;
+    }
+    .auth-image-section {
+        height: 300px;
+    }
+    .auth-form-wrapper {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-image-section {
+        height: 200px;
+    }
+    .auth-form-wrapper {
+        padding: 25px 15px;
+    }
+    .auth-welcome-heading {
+        font-size: 1.8em;
+    }
+    .auth-icon {
+        font-size: 2.5em;
+    }
+}
+
+/* Register Page Specific Styles */
+.register-page-container {
+    background-image: url('../assests/book-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.register-page-container .auth-image-section {
+    display: none;
+}
+
+.register-form-wrapper {
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.register-form-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.register-form-wrapper > div,
+.register-form-wrapper > form {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.register-form-wrapper .auth-header-content,
+.register-form-wrapper .auth-welcome-heading,
+.register-form-wrapper .auth-description,
+.register-form-wrapper .auth-icon,
+.register-form-wrapper .form-title,
+.register-form-wrapper .form-group label,
+.register-form-wrapper .form-link-text {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.register-form-wrapper .form-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: white !important;
+}
+
+.register-form-wrapper .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.register-form-wrapper .form-input:focus {
+    border-color: white !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4) !important;
+}
+
+.register-form-wrapper .form-submit-button {
+    background-color: #25d366 !important;
+    color: white !important;
+}
+
+.register-form-wrapper .form-submit-button:hover:not(:disabled) {
+    background-color: #128c7e !important;
+}
+
+.register-form-wrapper .form-link {
+    color: #87ceeb !important;
+}
+
+@media (max-width: 900px) {
+    .register-form-wrapper {
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .auth-welcome-heading {
+        font-size: 2.4em;
+    }
+    .auth-description {
+        font-size: 1.05em;
+    }
+    .form-title {
+        font-size: 2.2em;
+    }
+}

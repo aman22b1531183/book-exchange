@@ -1,0 +1,24 @@
+/* frontend/src/index.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* A simple, common font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light grey background */
+  color: #333; /* Dark text for readability */
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+/* Basic Link Styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
